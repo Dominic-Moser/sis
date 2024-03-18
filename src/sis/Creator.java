@@ -2,10 +2,6 @@ package sis;
 
 public class Creator
 {
-
-	/**
-	 * @param args
-	 */
 	
 			String firstName;
 			String lastName;
@@ -17,7 +13,7 @@ public class Creator
 			String grade3;
 			
 			 public Creator (String f, String l, String p1, String p2, String p3, String g1, String g2, String g3)
-			        {
+		        {
 			        firstName = f;
 			        lastName = l;
 			        period1 = p1;
@@ -27,7 +23,7 @@ public class Creator
 			        grade2 = g2;
 			        grade3 = g3;
 			       
-			        }
+		        }
 
 			public String getFirstName()
 				{
