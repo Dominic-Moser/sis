@@ -1,5 +1,6 @@
 package sis;
 
+<<<<<<< HEAD
 public class Student
 {
 	
@@ -109,4 +110,3 @@ public class Student
 		
 
 }
-
