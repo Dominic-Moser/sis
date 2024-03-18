@@ -8,7 +8,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		
+		calculateGPA();
 		System.out.println("Select an option \n 1: Sort Students \n 2: Add or Delete a Student \n 3: Change a Student's Grades or Schedule");
 		int option = userIntInput.nextInt();
 		
@@ -21,6 +21,51 @@ public class Runner {
 		if(option == 3) {
 			changeSched();
 		}
+		}
+
+	private static void calculateGPA()
+		{
+			double GPA = 0;
+			for(int i = 0; i < student.length(); i++) {
+				if(student.get(i).getGrade1().equals("A+")) {
+					GPA += 4.0;
+				}
+				if(student.get(i).getGrade1().equals("A")) {
+					GPA += 4.0;
+				}
+				if(student.get(i).getGrade1().equals("A-")) {
+					GPA += 3.7;
+				}
+				if(student.get(i).getGrade1().equals("B+")) {
+					GPA += 3.3;
+				}
+				if(student.get(i).getGrade1().equals("B")) {
+					GPA += 3.0;
+				}
+				if(student.get(i).getGrade1().equals("B-")) {
+					GPA += 2.7;
+				}
+				if(student.get(i).getGrade1().equals("C+")) {
+					GPA += 2.3;
+				}
+				if(student.get(i).getGrade1().equals("C")) {
+					GPA += 2.0;
+				}
+				if(student.get(i).getGrade1().equals("C-")) {
+					GPA += 1.7;
+				}
+				if(student.get(i).getGrade1().equals("D+")) {
+					GPA += 1.3;
+				}
+				if(student.get(i).getGrade1().equals("D")) {
+					GPA += 1.0;
+				}
+				else {
+					GPA += 0;
+				}
+				GPA = GPA/3;
+			}
+			
 		}
 
 	private static void changeSched()
@@ -62,7 +107,7 @@ public class Runner {
 				String grade3 = userStringInput.nextLine();
 				
 				//will not work until pojo and arraylist are in working order
-//				student.add(new Student(firstName, lastName, period1, period2, period3, grade1, grade2, grade3));
+				Student.add(new Student(firstName, lastName, period1, period2, period3, grade1, grade2, grade3));
 			}
 			if(option == 2) {
 				System.out.println("Enter the last name of the student you would like to remove");

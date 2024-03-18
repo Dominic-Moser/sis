@@ -3,9 +3,6 @@ package sis;
 public class Creator
 {
 
-	/**
-	 * @param args
-	 */
 	
 			String firstName;
 			String lastName;
