@@ -2,7 +2,7 @@ package sis;
 
 public class Creator
 {
-	
+
 			String firstName;
 			String lastName;
 			String period1;
