@@ -23,7 +23,7 @@ public class Runner {
 			addDelete();
 		}
 		if(option == 3) {
-			changeSched();
+			editStudent(sClass);
 		}
 		}
 
@@ -72,16 +72,73 @@ public class Runner {
 			
 		}
 
-	private static void changeSched()
+	private static void editStudent(ArrayList<Student> sClass)
 		{
-			System.out.println("Select an Option \n 1: Change a student's schedule \n 2: Change a student's grades");
+			ArrayList<String> courses = new ArrayList<String>();
+			courses.add(new String("Algebra"));
+			courses.add(new String("Biology"));
+			courses.add(new String("English"));
+			System.out.println("Select number next to the student that you would like to edit.");
+			int counter = 1;			
+			for(Student s : sClass)
+				{
+					System.out.println(counter + ". " + s.getFirstName() + " " + s.getLastName());
+					counter++;
+				}
+			int studentChoice = userIntInput.nextInt();
+			studentChoice--;
+			System.out.println("Select an Option \n 1: Change the student's schedule \n 2: Change the student's grades");
 			int option = userIntInput.nextInt();
-			if(option == 1) {
-				
+			if(option == 1) {//changes student's classes and schedule
+				System.out.println("Select which class you would like to put the student into.");
+				System.out.println("\n 1. Algebra \n 2. Biology \n 3. English");			
+				int newClass = userIntInput.nextInt();
+				newClass--;
+				System.out.println("Select which current class you would like to edit.");
+				System.out.println("\n 1. " + sClass.get(studentChoice).getPeriod1() + "\n 2. " + sClass.get(studentChoice).getPeriod2() + "\n 3. " + sClass.get(studentChoice).getPeriod3());
+				int periodChoice = userIntInput.nextInt();
+				if(periodChoice == 1)
+				{
+					sClass.get(studentChoice).setPeriod1(courses.get(newClass));
+				}
+				else if(periodChoice == 2)
+				{
+					sClass.get(studentChoice).setPeriod2(courses.get(newClass));
+				}
+				else if(periodChoice == 3)
+				{
+					sClass.get(studentChoice).setPeriod3(courses.get(newClass));
+				}
 			}
-			if(option == 2) {
-				
+			if(option == 2) {//changes student's grades
+				System.out.println("Select which of the student's grades you would like to change.");
+				System.out.println("\n 1. " + sClass.get(studentChoice).getPeriod1() + " " + sClass.get(studentChoice).getGrade1() +
+						"\n 2. " + sClass.get(studentChoice).getPeriod2() + " " + sClass.get(studentChoice).getGrade2() + 
+						"\n 3. " + sClass.get(studentChoice).getPeriod3() + " " + sClass.get(studentChoice).getGrade3());
+				int periodChoice = userIntInput.nextInt();
+				System.out.println("What would you like the student's new grade to be? A+, A, B+, B, B-, and so on");
+				String newGrade = userStringInput.nextLine();
+				newGrade.toUpperCase();
+				switch(periodChoice)
+				{
+					case 1:
+					{
+						sClass.get(studentChoice).setGrade1(newGrade);
+					}
+					case 2:
+					{
+						sClass.get(studentChoice).setGrade2(newGrade);
+					}
+					case 3:
+					{
+						sClass.get(studentChoice).setGrade3(newGrade);
+					}
+				}
 			}
+			System.out.println("The Student's new schedule and grades are :" + 				
+					("\n 1. " + sClass.get(studentChoice).getPeriod1() + " " + sClass.get(studentChoice).getGrade1() +
+					"\n 2. " + sClass.get(studentChoice).getPeriod2() + " " + sClass.get(studentChoice).getGrade2() + 
+					"\n 3. " + sClass.get(studentChoice).getPeriod3() + " " + sClass.get(studentChoice).getGrade3()));
 			
 		}
 

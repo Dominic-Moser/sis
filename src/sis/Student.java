@@ -1,8 +1,7 @@
 package sis;
 
-<<<<<<< HEAD
 public class Student
-{
+	{
 	
 			String firstName;
 			String lastName;
@@ -105,8 +104,4 @@ public class Student
 				{
 					this.grade3 = grade3;
 				}
-
-			
-		
-
-}
+	}
