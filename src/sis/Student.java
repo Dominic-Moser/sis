@@ -1,17 +1,16 @@
 package sis;
 
-<<<<<<< HEAD
 public class Student
 {
 	
-			String firstName;
-			String lastName;
-			String period1;
-			String period2;
-			String period3;
-			String grade1;
-			String grade2;
-			String grade3;
+			private String firstName;
+			private String lastName;
+			private String period1;
+			private String period3;
+			private String period2;
+			private String grade1;
+			private String grade2;
+			private String grade3;
 			
 			 public Student (String f, String l, String p1, String p2, String p3, String g1, String g2, String g3)
 		        {
@@ -105,7 +104,25 @@ public class Student
 				{
 					this.grade3 = grade3;
 				}
-
+			
+		    public void swapPeriods(String periodName1, String periodName2) {
+		        if (period1.equals(periodName1) && period2.equals(periodName2)) {
+		            String temp = period1;
+		            period1 = period2;
+		            period2 = temp;
+		        } else if (period1.equals(periodName1) && period3.equals(periodName2)) {
+		            String temp = period1;
+		            period1 = period3;
+		            period3 = temp;
+		        } else if (period2.equals(periodName1) && period3.equals(periodName2)) {
+		            String temp = period2;
+		            period2 = period3;
+		            period3 = temp;
+		        } else {
+		            System.out.println("Invalid period names. Please try again.");
+		        }
+		    }
+			
 			
 		
 
